@@ -31,6 +31,7 @@ public final class PowerConfigScreen {
 
         ConfigCategory combat = builder.getOrCreateCategory(Component.translatable("config.lightningpowers.combat"));
         combat.addEntry(e.startBooleanToggle(label("lightningimmune"), c.preventLightningDamage).setDefaultValue(true).setSaveConsumer(v -> c.preventLightningDamage=v).build());
+        combat.addEntry(e.startBooleanToggle(label("playerfire"), c.preventPlayerFire).setDefaultValue(true).setSaveConsumer(v -> c.preventPlayerFire=v).build());
         combat.addEntry(e.startBooleanToggle(label("electricmelee"), c.electricMelee).setDefaultValue(true).setSaveConsumer(v -> c.electricMelee=v).build());
         combat.addEntry(e.startFloatField(label("damage"), c.electricBonusDamage).setDefaultValue(5f).setMin(0f).setMax(1000f).setSaveConsumer(v -> c.electricBonusDamage=v).build());
         combat.addEntry(e.startBooleanToggle(label("particles"), c.electricParticles).setDefaultValue(true).setSaveConsumer(v -> c.electricParticles=v).build());

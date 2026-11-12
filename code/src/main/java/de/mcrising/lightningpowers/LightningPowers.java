@@ -68,6 +68,15 @@ public class LightningPowers implements ModInitializer {
             .register(tab -> tab.accept(HELMET));
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             tick++;
+            // Fire protection must run EVERY tick, not just on the one-second
+            // effect refresh. Otherwise the player can visibly burn in between.
+            if (PowerConfig.INSTANCE.enabled && PowerConfig.INSTANCE.preventPlayerFire) {
+                for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+                    if (wearingHelmet(player) && isCharged(player)) {
+                        player.clearFire();
+                    }
+                }
+            }
             if ((tick % 20) == 0) {
                 for (ServerPlayer player : server.getPlayerList().getPlayers()) {
                     Charge charge = ACTIVE.get(player.getUUID());
@@ -99,6 +108,9 @@ public class LightningPowers implements ModInitializer {
     public static boolean onLightning(ServerPlayer player) {
         PowerConfig cfg = PowerConfig.INSTANCE;
         if (!cfg.enabled || !wearingHelmet(player)) return false;
+        // Even during cooldown, an equipped helmet protects its wearer from
+        // being ignited by subsequent lightning strikes.
+        if (cfg.preventPlayerFire) player.clearFire();
         if (tick < COOLDOWNS.getOrDefault(player.getUUID(), 0L)) return cfg.preventLightningDamage;
         if (!cfg.reactivationResetsDuration && ACTIVE.containsKey(player.getUUID()) && isCharged(player))
             return cfg.preventLightningDamage;
@@ -114,6 +126,7 @@ public class LightningPowers implements ModInitializer {
         ItemStack worn = player.getItemBySlot(EquipmentSlot.HEAD);
         worn.set(DataComponents.ITEM_MODEL, CHARGED_HELMET_MODEL);
         applyEffects(player);
+        if (cfg.preventPlayerFire) player.clearFire();
         if (cfg.damageHelmet && cfg.helmetDamagePerStrike > 0) {
             ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
             helmet.hurtAndBreak(cfg.helmetDamagePerStrike, player, EquipmentSlot.HEAD);

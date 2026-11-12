@@ -24,6 +24,7 @@ public final class PowerConfig {
     public int foodLevel = 20;
     public float saturation = 20f;
     public boolean preventLightningDamage = true;
+    public boolean preventPlayerFire = true;
     public boolean damageHelmet = true;
     public int helmetDamagePerStrike = 25;
     public boolean electricMelee = true;
