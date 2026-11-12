@@ -1,0 +1,23 @@
+{
+ "item.lightningpowers.lightning_helmet": "Blitzableiter-Helm",
+ "config.lightningpowers.title": "Lightning Powers - Einstellungen",
+ "config.lightningpowers.basic": "Aufladung",
+ "config.lightningpowers.stats": "Gesundheit, Nahrung und Effekte",
+ "config.lightningpowers.combat": "Kampf und Helm",
+ "config.lightningpowers.enabled": "Mod-Funktionen aktiviert",
+ "config.lightningpowers.duration": "Aufladungsdauer (Sekunden)",
+ "config.lightningpowers.cooldown": "Abklingzeit (Sekunden)",
+ "config.lightningpowers.recharge": "Erneuter Blitz setzt Dauer zurück",
+ "config.lightningpowers.heal": "Leben vollständig auffüllen",
+ "config.lightningpowers.food": "Nahrung auffüllen",
+ "config.lightningpowers.foodlevel": "Nahrungslevel (0-20)",
+ "config.lightningpowers.saturation": "Sättigung (0-20)",
+ "config.lightningpowers.effects": "Effekte (namespace:id:stufe-ab-0)",
+ "config.lightningpowers.effectsactive": "Effekte während Aufladung erneuern",
+ "config.lightningpowers.lightningimmune": "Blitzschaden mit Helm verhindern",
+ "config.lightningpowers.electricmelee": "Elektrischer Nahkampf",
+ "config.lightningpowers.damage": "Zusätzlicher Nahkampfschaden",
+ "config.lightningpowers.particles": "Elektrische Partikel",
+ "config.lightningpowers.helmetdamage": "Helm-Haltbarkeit verbrauchen",
+ "config.lightningpowers.wear": "Haltbarkeitsverlust pro Blitz"
+}

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "lightningpowers:helmet"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "lightningpowers:helmet"
+      }
+    ]
+  }
+}

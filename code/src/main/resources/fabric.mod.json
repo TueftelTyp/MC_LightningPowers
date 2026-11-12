@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "lightningpowers",
+  "version": "${version}",
+  "name": "Lightning Powers",
+  "description": "Craft a lightning rod helmet and gain configurable powers from lightning strikes.",
+  "authors": [
+    "MC Rising"
+  ],
+  "environment": "*",
+  "license": "MIT",
+  "entrypoints": {
+    "main": [
+      "de.mcrising.lightningpowers.LightningPowers"
+    ],
+    "modmenu": [
+      "de.mcrising.lightningpowers.client.LightningModMenu"
+    ],
+    "client": [
+      "de.mcrising.lightningpowers.client.LightningPowersClient"
+    ]
+  },
+  "mixins": [
+    "lightningpowers.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*",
+    "cloth-config2": "*"
+  },
+  "icon": "assets/lightningpowers/icon.png"
+}

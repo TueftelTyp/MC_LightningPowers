@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": ["CRC", "CDC"],
+  "key": {
+    "C": "minecraft:copper_block",
+    "R": "minecraft:lightning_rod",
+    "D": "minecraft:diamond_helmet"
+  },
+  "result": { "id": "lightningpowers:lightning_helmet", "count": 1 }
+}

@@ -1,0 +1,23 @@
+{
+ "item.lightningpowers.lightning_helmet": "Lightning Rod Helmet",
+ "config.lightningpowers.title": "Lightning Powers - Settings",
+ "config.lightningpowers.basic": "Charge",
+ "config.lightningpowers.stats": "Health, food and effects",
+ "config.lightningpowers.combat": "Combat and helmet",
+ "config.lightningpowers.enabled": "Enable mod features",
+ "config.lightningpowers.duration": "Charge duration (seconds)",
+ "config.lightningpowers.cooldown": "Cooldown (seconds)",
+ "config.lightningpowers.recharge": "New lightning resets duration",
+ "config.lightningpowers.heal": "Fully restore health",
+ "config.lightningpowers.food": "Restore food",
+ "config.lightningpowers.foodlevel": "Food level (0-20)",
+ "config.lightningpowers.saturation": "Saturation (0-20)",
+ "config.lightningpowers.effects": "Effects (namespace:id:level-from-0)",
+ "config.lightningpowers.effectsactive": "Refresh effects during charge",
+ "config.lightningpowers.lightningimmune": "Prevent lightning damage with helmet",
+ "config.lightningpowers.electricmelee": "Electric melee",
+ "config.lightningpowers.damage": "Additional melee damage",
+ "config.lightningpowers.particles": "Electric particles",
+ "config.lightningpowers.helmetdamage": "Consume helmet durability",
+ "config.lightningpowers.wear": "Durability lost per lightning strike"
+}
