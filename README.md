@@ -8,7 +8,7 @@ Get struck by lightning while wearing your special helmet to restore your health
 
 Every major ability can be customized through the in-game **Mod Menu** configuration screen or a JSON configuration file.
 
-![Lightning Powers Logo](/images/logo.png){width=50}
+<img src="/images/logo.png" width="50%" style="display:block; margin:auto;">
 
 ---
 
@@ -26,7 +26,7 @@ Craft and equip a special copper helmet featuring a lightning rod on top.
 - Available through the Creative inventory
 - Fully craftable in Survival mode
 
-![Lightning Rod Helmet](YOUR_HELMET_IMAGE_URL)
+<img src="/images/helmet.png" width="30%" style="display:block; margin:auto;">
 
 ### 🌩️ Lightning-Powered Abilities
 
@@ -49,7 +49,7 @@ The duration and strength of your abilities can be customized.
 
 You can also add other registered Minecraft status effects, including compatible effects from other mods.
 
-![Supercharged Player](YOUR_SUPERCHARGED_IMAGE_URL)
+<img src="/images/supercharged.png" width="30%" style="display:block; margin:auto;">
 
 ### ⚔️ Electric Combat
 
@@ -68,7 +68,7 @@ Supercharged players can emit electrical particles, making their temporary power
 
 The helmet also features glowing energy details that distinguish its charged appearance from its normal state.
 
-![Electric Effects](YOUR_EFFECTS_IMAGE_URL)
+<img src="/images/eeffects.png" width="30%" style="display:block; margin:auto;">
 
 ### 🔥 Lightning Protection
 
@@ -101,7 +101,7 @@ Arrange the materials in a crafting table:
 
 **Result: 1× Lightning Rod Helmet**
 
-![Crafting Recipe](YOUR_CRAFTING_IMAGE_URL)
+<img src="/images/defaultReceipe.jpg" width="30%" style="display:block; margin:auto;">
 
 You can also obtain the helmet using:
 
@@ -153,7 +153,7 @@ Effect amplifier values start at `0`, which corresponds to level I.
 
 This system allows you to create your own combinations of abilities, from a small temporary boost to an extremely powerful lightning transformation.
 
-![Mod Menu Configuration](YOUR_CONFIG_IMAGE_URL)
+<img src="/images/modmenu.png" width="30%" style="display:block; margin:auto;">
 
 ---
 
@@ -210,13 +210,13 @@ Whether you prefer balanced survival gameplay or overpowered sandbox fun, Lightn
 
 ## 📸 Screenshots
 
-![Helmet in Creative Inventory](YOUR_CREATIVE_INVENTORY_IMAGE_URL)
+<img src="/images/creativeinventory.jpg" width="30%" style="display:block; margin:auto;">
 
-![Helmet Equipped](YOUR_WORN_HELMET_IMAGE_URL)
+<img src="/images/helmet_equipped.png" width="30%" style="display:block; margin:auto;">
 
-![Lightning Strike](YOUR_LIGHTNING_STRIKE_IMAGE_URL)
+<img src="/images/strike.png" width="30%" style="display:block; margin:auto;">
 
-![Supercharged Mode](YOUR_SUPERCHARGED_SCREENSHOT_URL)
+<img src="/images/charged.png" width="30%" style="display:block; margin:auto;">
 
 ---
 
