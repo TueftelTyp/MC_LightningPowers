@@ -8,7 +8,7 @@ Get struck by lightning while wearing your special helmet to restore your health
 
 Every major ability can be customized through the in-game **Mod Menu** configuration screen or a JSON configuration file.
 
-![Lightning Powers Logo](/images/logo.png)
+![Lightning Powers Logo](/images/logo.png){width=50}
 
 ---
 
