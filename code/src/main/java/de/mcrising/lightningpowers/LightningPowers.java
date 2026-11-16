@@ -5,6 +5,8 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Holder;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -49,6 +51,9 @@ public class LightningPowers implements ModInitializer {
     public static Item HELMET;
     private static final Map<UUID, Charge> ACTIVE = new HashMap<>();
     private static final Map<UUID, Long> COOLDOWNS = new HashMap<>();
+    // Fire from a lightning bolt is placed in the world separately from thunderHit.
+    // Re-check the impact area for a few ticks to remove only fire blocks next to the wearer.
+    private static final Map<UUID, Long> LIGHTNING_FIRE_CLEANUP = new HashMap<>();
     private record Charge(long untilTick) {}
     private static long tick = 0;
 
@@ -72,11 +77,16 @@ public class LightningPowers implements ModInitializer {
             // effect refresh. Otherwise the player can visibly burn in between.
             if (PowerConfig.INSTANCE.enabled && PowerConfig.INSTANCE.preventPlayerFire) {
                 for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-                    if (wearingHelmet(player) && isCharged(player)) {
-                        player.clearFire();
+                    if (wearingHelmet(player)) {
+                        // Remove the burning status during active charging or a recent strike.
+                        Long cleanupUntil = LIGHTNING_FIRE_CLEANUP.get(player.getUUID());
+                        boolean recentStrike = cleanupUntil != null && tick <= cleanupUntil;
+                        if (isCharged(player) || recentStrike) player.clearFire();
+                        if (recentStrike) removeStrikeFire(player);
                     }
                 }
             }
+            LIGHTNING_FIRE_CLEANUP.entrySet().removeIf(entry -> tick > entry.getValue());
             if ((tick % 20) == 0) {
                 for (ServerPlayer player : server.getPlayerList().getPlayers()) {
                     Charge charge = ACTIVE.get(player.getUUID());
@@ -105,12 +115,34 @@ public class LightningPowers implements ModInitializer {
         return player.getItemBySlot(EquipmentSlot.HEAD).is(HELMET);
     }
 
+    private static void removeStrikeFire(ServerPlayer player) {
+        // Only remove ordinary fire in the 3x3 area immediately around the struck player.
+        // No terrain blocks, lava, or more distant fires are altered.
+        BlockPos origin = player.blockPosition();
+        for (int dx = -1; dx <= 1; dx++) {
+            for (int dy = -1; dy <= 1; dy++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    BlockPos pos = origin.offset(dx, dy, dz);
+                    if (player.level().getBlockState(pos).is(Blocks.FIRE)) {
+                        player.level().setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
+                    }
+                }
+            }
+        }
+    }
+
     public static boolean onLightning(ServerPlayer player) {
         PowerConfig cfg = PowerConfig.INSTANCE;
         if (!cfg.enabled || !wearingHelmet(player)) return false;
         // Even during cooldown, an equipped helmet protects its wearer from
         // being ignited by subsequent lightning strikes.
-        if (cfg.preventPlayerFire) player.clearFire();
+        if (cfg.preventPlayerFire) {
+            player.clearFire();
+            // The bolt can generate fire after the thunderHit callback returns.
+            // Clean the immediate impact area for 12 server ticks.
+            LIGHTNING_FIRE_CLEANUP.put(player.getUUID(), tick + 12L);
+            removeStrikeFire(player);
+        }
         if (tick < COOLDOWNS.getOrDefault(player.getUUID(), 0L)) return cfg.preventLightningDamage;
         if (!cfg.reactivationResetsDuration && ACTIVE.containsKey(player.getUUID()) && isCharged(player))
             return cfg.preventLightningDamage;

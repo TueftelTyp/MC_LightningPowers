@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "lightningpowers",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "name": "Lightning Powers",
   "description": "Craft a lightning rod helmet and gain configurable powers from lightning strikes.",
   "authors": [
-    "MC Rising"
+    "TueftelTyp"
   ],
   "environment": "*",
   "license": "MIT",

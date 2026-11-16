@@ -20,5 +20,5 @@
   "config.lightningpowers.particles": "Elektrische Partikel",
   "config.lightningpowers.helmetdamage": "Helm-Haltbarkeit verbrauchen",
   "config.lightningpowers.wear": "Haltbarkeitsverlust pro Blitz",
-  "config.lightningpowers.playerfire": "Spieler waehrend Aufladung vor Feuer schuetzen"
+  "config.lightningpowers.playerfire": "Spieler während Aufladung vor Feuer schützen"
 }
