@@ -49,7 +49,7 @@ The duration and strength of your abilities can be customized.
 
 You can also add other registered Minecraft status effects, including compatible effects from other mods.
 
-<img src="/images/supercharged.png" width="30%" style="display:block; margin:auto;">
+<img src="/images/supercharged.png" width="50%" style="display:block; margin:auto;">
 
 ### ⚔️ Electric Combat
 
@@ -101,7 +101,7 @@ Arrange the materials in a crafting table:
 
 **Result: 1× Lightning Rod Helmet**
 
-<img src="/images/defaultReceipe.jpg" width="30%" style="display:block; margin:auto;">
+<img src="/images/defaultReceipe.jpg" width="40%" style="display:block; margin:auto;">
 
 You can also obtain the helmet using:
 
@@ -153,7 +153,7 @@ Effect amplifier values start at `0`, which corresponds to level I.
 
 This system allows you to create your own combinations of abilities, from a small temporary boost to an extremely powerful lightning transformation.
 
-<img src="/images/modmenu.png" width="30%" style="display:block; margin:auto;">
+<img src="/images/modmenu.png" width="50%" style="display:block; margin:auto;">
 
 ---
 
@@ -209,15 +209,12 @@ Whether you prefer balanced survival gameplay or overpowered sandbox fun, Lightn
 ---
 
 ## 📸 Screenshots
-
+<div style="display: flex; gap: 10px;">
 <img src="/images/creativeinventory.jpg" width="30%" style="display:block; margin:auto;">
-
 <img src="/images/helmet_equipped.png" width="30%" style="display:block; margin:auto;">
-
 <img src="/images/strike.png" width="30%" style="display:block; margin:auto;">
-
 <img src="/images/charged.png" width="30%" style="display:block; margin:auto;">
-
+</div>
 ---
 
 ## ⚡ Become the Storm!
