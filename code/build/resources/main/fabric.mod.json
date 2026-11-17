@@ -7,6 +7,10 @@
   "authors": [
     "TueftelTyp"
   ],
+  "contact": {
+    "homepage": "https://github.com/TueftelTyp/MC_LightningPowers",
+    "issues": "https://github.com/TueftelTyp/MC_LightningPowers/issues"
+  },
   "environment": "*",
   "license": "MIT",
   "entrypoints": {
