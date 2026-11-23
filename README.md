@@ -212,8 +212,8 @@ Whether you prefer balanced survival gameplay or overpowered sandbox fun, Lightn
 <div style="display: flex; gap: 10px;">
 <img src="/images/creativeinventory.jpg" width="30%" style="display:block; margin:auto;">
 <img src="/images/helmet_equipped.png" width="30%" style="display:block; margin:auto;">
-<img src="/images/strike.png" width="30%" style="display:block; margin:auto;">
-<img src="/images/charged.png" width="30%" style="display:block; margin:auto;">
+<img src="/images/strike.gif" width="30%" style="display:block; margin:auto;">
+<img src="/images/strikeeffects.gif" width="30%" style="display:block; margin:auto;">
 </div>
 ---
 
